@@ -21,7 +21,13 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "paths": {
+      "wit-mouseover-copyable": [
+        "dist/wit-mouseover-copyable/wit-mouseover-copyable",
+        "dist/wit-mouseover-copyable"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

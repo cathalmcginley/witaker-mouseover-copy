@@ -1,0 +1,10 @@
+.hidden-formatted-content {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  left: -1000px;
+  top: 0;
+  white-space: pre;
+}

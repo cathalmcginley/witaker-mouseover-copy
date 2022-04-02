@@ -1,0 +1,25 @@
+$copy-inactive: rgb(243, 243, 243);
+$copy-active: #63ad1d;
+
+svg.copy-icon {
+  width: 24px;
+  height: 24px;
+
+  g.copy-icon {
+    stroke: darken($copy-inactive, 10%);
+    fill: darken($copy-inactive, 10%);
+  }
+
+  &.prominent {
+    g.copy-icon {
+      stroke: darken($copy-inactive, 25%);
+      fill: darken($copy-inactive, 25%);
+    }
+  }
+  &.ready {
+    g.copy-icon {
+      stroke: $copy-active;
+      fill: $copy-active;
+    }
+  }
+}

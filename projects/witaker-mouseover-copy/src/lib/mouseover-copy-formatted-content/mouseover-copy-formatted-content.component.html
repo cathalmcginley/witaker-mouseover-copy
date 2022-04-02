@@ -1,0 +1,15 @@
+<witaker-mouseover-copy [dwellTime]="dwellTime" [scrubTime]="scrubTime">
+  <div>
+    Test
+    <ng-content select="[slot='display']"></ng-content>
+  </div>
+  <div class="hidden-formatted-content">
+    <witaker-content-copier
+      [copyContents]="copyContents"
+      [asHtml]="asHtml"
+      [newline]="newline"
+    >
+      <ng-content select="[slot='hidden-content']"></ng-content>
+    </witaker-content-copier>
+  </div> </witaker-mouseover-copy
+>`,

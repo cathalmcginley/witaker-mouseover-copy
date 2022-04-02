@@ -1,0 +1,16 @@
+<div
+  class="copy-wrapper"
+  [class.copied]="isCopied"
+  (mouseenter)="copyComponentEnter()"
+  (mouseleave)="copyComponentLeave()"
+>
+  <div class="to-copy" #toCopy>
+    <ng-content></ng-content>
+  </div>
+  <div class="copy-icon">
+    <witaker-copy-icon [prominent]="isHovering" [ready]="isCopied"></witaker-copy-icon>
+  </div>
+  <div class="hover-copy-progress-bar">
+    <div class="bar" #progressBar></div>
+  </div>
+</div>

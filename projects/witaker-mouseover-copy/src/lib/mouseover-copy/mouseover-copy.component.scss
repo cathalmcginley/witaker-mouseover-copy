@@ -1,0 +1,90 @@
+$copy-inactive: rgb(243, 243, 243);
+//$copy-active: rgb(136, 236, 41);
+$copy-active: #63ad1d;
+$copy-dwell-delay: 100ms;
+$copy-dwell-duration: 233ms;
+
+
+.sneaky-copy-text {
+  min-height: 12ch;
+  padding: 1rem;
+  border: 2px solid $copy-inactive;
+  width: 72ch;
+  margin: 1rem auto 1rem 1rem;
+}
+button {
+  border-radius: 1ch;
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+}
+
+button.authorize {
+  background-color: $copy-active;
+  color: white;
+
+}
+
+.copy-wrapper {
+  display: grid;
+  grid-template-columns: [content-start] auto [content-end icon-start] 2rem [icon-end];
+  grid-template-rows: [header-start] 2rem [header-end content-row-start] auto [content-row-end footer-start] 2ch [footer-end];
+
+  border: 2px solid $copy-inactive;
+  padding: 1ch;
+
+  transition-property: border-color;
+  transition-duration: 50ms;
+  transition-timing-function: ease-out;
+
+  .to-copy {
+    grid-column: content-start / content-end;
+    grid-row: content-row-start / content-row-end;
+
+    padding: 0 0 2rem 0;
+  }
+  .copy-icon {
+    grid-column: icon-start / icon-end;
+    grid-row: header-start / header-end;
+  }
+  .hover-copy-progress-bar {
+    grid-column: content-start / icon-end;
+    grid-row: footer-start / footer-end;
+  }
+
+  .bar {
+    width: 0%;
+    height: 2ch;
+    background-color: $copy-active;
+  }
+
+
+  &:hover {
+    border-color: $copy-active;
+    svg.copy-icon {
+      g.copy-icon {
+        stroke: darken($copy-inactive, 25%);
+        fill: darken($copy-inactive, 25%);
+      }
+      &:hover g.copy-icon {
+        stroke: $copy-active;
+        fill: $copy-active;
+      }
+    }
+  }
+  &.copied {
+    border-color: $copy-active;
+    .bar {
+      width: 100%;
+    }
+    svg.copy-icon {
+      g.copy-icon {
+        stroke: $copy-active;
+        fill: $copy-active;
+      }
+    }
+  }
+
+}
+
+
