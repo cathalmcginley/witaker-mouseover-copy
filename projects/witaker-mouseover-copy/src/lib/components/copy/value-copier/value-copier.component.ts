@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MouseoverCopyService } from '../mouseover-copy/mouseover-copy.service';
+import { MouseoverCopyService } from '../../../services/mouseover-copy/mouseover-copy.service';
 
 @Component({
   selector: 'witaker-value-copier',

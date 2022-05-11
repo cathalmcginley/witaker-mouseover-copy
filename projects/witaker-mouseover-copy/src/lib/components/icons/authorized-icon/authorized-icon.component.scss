@@ -1,0 +1,30 @@
+svg.authorized-icon {
+  width: 1rem;
+  height: 1rem;
+
+  --authorize-blue: #1d78ad;
+  --failure-red: #ad1d3c;
+  --authorize-inactive-bg-darker: rgb(205, 205, 205);
+  --authorized-off-white: #ddf0ff;
+
+  g.authorized-icon {
+
+    fill: var(--authorize-inactive-bg-darker)
+  }
+
+  &.prominent {
+    g.authorized-icon {
+      fill: var(--authorize-blue);
+    }
+  }
+  &.ready {
+    g.authorized-icon {
+      fill: var(--authorized-off-white);
+    }
+  }
+  &.failed {
+    g.authorized-icon {
+      fill: var(--failure-red);
+    }
+  }
+}

@@ -19,8 +19,8 @@ import {
 
 import { timer, Subscription } from 'rxjs';
 
-import { ClipboardService } from '../clipboard/clipboard.service';
-import { MouseoverCopyService } from './mouseover-copy.service';
+import { ClipboardService } from '../../../services/clipboard/clipboard.service';
+import { MouseoverCopyService } from '../../../services/mouseover-copy/mouseover-copy.service';
 
 @Component({
   selector: 'witaker-mouseover-copy',
@@ -107,22 +107,6 @@ export class MouseoverCopyComponent implements OnInit, OnDestroy {
     this.player.play();
   }
 
-  async authorize() {
-    const text = await navigator.clipboard.readText();
-    console.log(text);
-    const m = text.match(
-      /witaker:clipboard-server\[port=(\d{4,5});auth-key='([^']+)'\]/
-    );
-    if (m) {
-      const port = parseInt(m[1]);
-      const authKey = m[2];
-      this.clipboard.setPort(port);
-      this.clipboard.setAuthKey(authKey);
-      console.log('got auth', port, authKey);
-    } else {
-      console.log('no match');
-    }
-  }
 
   copyComponentEnter(): void {
     this.playAnim('hover');

@@ -61,7 +61,7 @@ export function clipboardContentResponse(text: string): ClipboardResponseBody {
   );
 }
 
-export function clipboardErrorEesponse(
+export function clipboardErrorResponse(
   errorMessage: string
 ): ClipboardResponseBody {
   return new ClipboardResponseBody(

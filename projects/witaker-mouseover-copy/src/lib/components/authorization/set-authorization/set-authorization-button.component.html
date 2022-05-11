@@ -1,0 +1,22 @@
+<button
+  class="set-authorization"
+  (mouseenter)="beginHover()"
+  (mouseleave)="endHover()"
+  (click)="authorizeFromClipboard()"
+  [ngClass]="{
+    authorized: authorizationSucceeded,
+    failed: authorizationFailed
+  }"
+>
+  <span class="icon"
+    ><witaker-authorized-icon
+      [prominent]="isHover"
+      [ready]="authorizationSucceeded"
+      [failed]="authorizationFailed"
+    ></witaker-authorized-icon
+  ></span>
+  <span class="label" [title]="error"
+    ><span class="v">Authorize</span>
+    <span class="n" *ngIf="!minimal"> Clipboard Server</span></span
+  >
+</button>

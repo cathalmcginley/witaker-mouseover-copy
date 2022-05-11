@@ -1,0 +1,66 @@
+$copy-inactive: rgb(243, 243, 243);
+//$copy-active: rgb(136, 236, 41);
+$copy-active: #63ad1d;
+$copy-dwell-delay: 100ms;
+$copy-dwell-duration: 233ms;
+
+button.set-authorization {
+  // min-height: 3rem;
+  --authorize-grey: rgb(55, 55, 55);
+  --authorize-blue: #1d78ad;
+  --failure-red: #ad1d3c;
+  --authorize-inactive-bg: rgb(243, 243, 243);
+  --authorize-inactive-bg-darker: rgb(205, 205, 205);
+
+  vertical-align: baseline;
+
+  padding: 0.5rem 1.5rem 0.6rem 1.5rem;
+  font-weight: bold;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--authorize-grey);
+  background-color: var(--authorize-inactive-bg);
+  border-radius: 0.5rem;
+
+  &:hover {
+    border-color: var(--authorize-blue);
+    color: var(--authorize-blue);
+    //background-color: var(--authorize-inactive-bg-darker);
+  }
+  &.authorized {
+    background-color: var(--authorize-blue);
+    color: white;
+    border-color: var(--authorize-blue);
+  }
+  &.failed {
+    color: var(--failure-red);
+    border-color: var(--failure-red);
+  }
+  span.icon {
+    display: inline-block;
+    margin-top: 0.2rem;
+  }
+  span.label {
+    display: inline-block;
+    position: relative;
+    top: -0.2rem;
+
+    padding-left: 1rem;
+    //padding-bottom: 0.2rem;
+    //line-height: 1.3rem;
+    // outline-offset: 0;
+    // outline-style: dotted;
+    // outline-color: red;
+    // outline-width: 1px;
+  }
+}
+span.o {
+  display: inline-block;
+  //padding-top: 0.3rem;
+  // outline-offset: 0;
+  //   outline-style: dotted;
+  //   outline-color: green;
+  //   outline-width: 1px;
+}

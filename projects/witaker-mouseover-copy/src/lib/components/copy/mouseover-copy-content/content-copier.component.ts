@@ -9,7 +9,7 @@ import {
 
 import { Subscription } from 'rxjs';
 
-import { MouseoverCopyService } from '../mouseover-copy/mouseover-copy.service';
+import { MouseoverCopyService } from '../../../services/mouseover-copy/mouseover-copy.service';
 
 @Component({
   selector: 'witaker-content-copier',
